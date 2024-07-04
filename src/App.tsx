@@ -1,23 +1,25 @@
-import { useState } from 'react';
 import './App.css';
-import Increment from './components/Increment';
-import Count from './components/Count';
-import Decrement from './components/Decrement';
+import Home from './components/Home';
+
+
 function App() {
+  const stringProp: string = "Hello, world!";
+  const booleanProp: boolean = true;
+  const numberProp: number = 42;
+  const functionProp = (message: string) => {
+    alert(message);
+  };
 
-  // function prop
-  const [count, setCount] = useState();
-
-  const decrement = ()=>{
-    return setCount + 1
-  }
   return (
-    <>
-      <Increment increment={setCount} />
-      <Count count={count} />
-      <Decrement decrement={decrement} />
-    </>
-  )
+    <Home
+      stringProp={stringProp}
+      booleanProp={booleanProp}
+      numberProp={numberProp}
+      functionProp={functionProp}
+    />
+  );
 }
+
+
 
 export default App
